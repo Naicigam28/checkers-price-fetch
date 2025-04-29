@@ -1,7 +1,9 @@
+from selenium.webdriver.common.by import By
+
 def getAllLinks(elements):
     links=set()
     for element in elements:
-        aTags=element.find_elements_by_tag_name("a")
+        aTags=element.find_elements(By.TAG_NAME, "a")
         
         for tag in aTags:
             link=tag.get_attribute("href")
